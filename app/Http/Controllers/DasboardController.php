@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class DasboardController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
         return view('test', [
-            'title' => 'Curso Laravel en Platzi!!!'
+            'title' => $request->query('title', 'valor default')
         ]);
     }
 }
